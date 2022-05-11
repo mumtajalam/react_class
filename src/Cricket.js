@@ -17,30 +17,34 @@ class Cricket extends Component{
         // }
         // this.forceUpdate();
         console.log(this.state.count);
-        this.setState(( {count}) =>({
-            count: count + 1
-        }));
+        this.setState({
+            count: this.state.count + 1
+        })
         console.log(this.state.count); // old value
         console.log('increament function over..');
-        // this.setState is an async method : it expects new state object as parameter, not 
+        // this.setState is an async method : it expects new state object as parameter, not function
     }
     render(){
+        let name = "abbgshs"
         return(
             <>
                 <div className="">
                     i am at NS
-                    <div>
-                        abcd
-                    </div>
                 </div>
-                
+                <div>
+                    abcd
+                </div>
+                <br></br>
+
                 <div
                 > Count:-{this.state.count}
+                <br></br>
+
                 <button onClick={this.increament}>increament</button>
                 </div>
 
                 <br></br>
-                <CricketChild/>
+                <CricketChild count_temp = {this.state.count} name_temp = {name} location_temp = "BGG"/>
             </>
         )
     }
